@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} > About us
+{% endblock %}
+
+{% block main %}
+    {% for auteur in auteurs %}
+        <p class="align-left">Nom : {{ auteur['lastname'] }}</p>
+        <p class="align-left">Prénom : {{ auteur['firstname'] }}
+            {% if auteur['firstname'] == 'Fabien' %}
+                  ❤   {# #128151 #}
+            {% endif %}
+        </p>
+        <p class="align-left">Date de naissance : {{ auteur['dateOfBirth'] | date("d/m/Y") }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
+

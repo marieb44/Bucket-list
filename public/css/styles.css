@@ -1,12 +1,12 @@
 @font-face {
-    src: url("../font/Butler_Regular.otf");
+    src: url("../fonts/Butler_Regular.otf");
     font-family: 'butler';
 }
 
 * {
     font-family: Calibri;
-    /*font-family: 'Ubuntu', sans-serif; */ /* Google Fonts */
-    /*font-family: 'butler', sans serif;*/  /* téléchargé depuis Da Fonts
+    /*fonts-family: 'Ubuntu', sans-serif; */ /* Google Fonts */
+    /*fonts-family: 'butler', sans serif;*/  /* téléchargé depuis Da Fonts
     /*border : 1px dashed black;*/
 }
 
@@ -17,6 +17,15 @@
     margin :0 0;
     height: 100vh;
 }
+/*
+.grid-ligne {
+    display: grid;
+    grid-template-columns: repeat(12, 9vw);
+}
+*/
+.space-right {
+    margin-right: 3vw;
+}
 
 .logo {
     margin-top: 1vh;
@@ -26,6 +35,7 @@
 .align-left {
     padding-left: 10vw;
 }
+
 .text-grand {
     font-size: 3rem;
 }

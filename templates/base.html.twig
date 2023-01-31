@@ -24,8 +24,10 @@
         <div class="align-left">
             <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo d'un seau" /><span class="text-grand">Bucket-List</span>
         </div>
-        <div class="align-left">
-            <a href="{{ path('main_home') }}">Home</a>
+        <div class="align-left grid-ligne">
+            <a class="space-right" href="{{ path('main_home') }}">Home</a>
+            <a class="space-right" href="{{ path('wish_list') }}">All wishes</a>
+            <a class="space-right" href="{{ path('main_about-us') }}">About us</a>
         </div>
     </header>
     <main>

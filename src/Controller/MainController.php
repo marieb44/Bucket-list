@@ -19,4 +19,21 @@ class MainController extends AbstractController
             'today' => $date
         ]);
     }
+
+    #[Route('/about-us', name: 'main_about-us')]
+    public function aboutUs(): Response
+    {
+        //l'application est appelée depuis "public"
+        $json = file_get_contents("../data/team.json");
+
+        //transformation du fichier en tableau associatif
+        $auteurs = json_decode($json, true);
+
+        $date = new \DateTime();
+        return $this->render('main/about-us.html.twig', [
+            'today' => $date,
+            'auteurs' => $auteurs
+        ]);
+    }
+
 }
