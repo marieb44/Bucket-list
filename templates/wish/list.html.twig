@@ -2,6 +2,11 @@
 
 {% block main %}
 <h1 class="align-left">Liste des souhaits</h1>
+<ul class="align-left">
+    {% for wish in wishes %}
+       <li><h2><a class="liste" href="{{ path('wish_detail', {'id': wish.id}) }}">{{ wish.title }}</a> ({{ wish.id }}) {{ wish.dateCreated | date("d/m/Y") }}</h2></li>
+    {% endfor %}
+</ul>
 {% endblock %}
 
 {% block title %}
