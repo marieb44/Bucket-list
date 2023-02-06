@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block main %}
+    <h2 class="align-left">Add your wishes !</h2>
+    <div class="align-left">
+        {{ form_start(wishForm) }}
+        {{ form_widget(wishForm) }}
+        <button>Let's go !</button>
+        {{ form_end(wishForm) }}
+    </div>
+
+{% endblock %}
+

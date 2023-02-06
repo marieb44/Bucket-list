@@ -6,17 +6,19 @@
 * {
     font-family: Calibri;
     /*fonts-family: 'Ubuntu', sans-serif; */ /* Google Fonts */
-    /*fonts-family: 'butler', sans serif;*/  /* téléchargé depuis Da Fonts
-    /*border : 1px dashed black;*/
+    /*fonts-family: 'butler', sans serif;*/
+    /* téléchargé depuis Da Fonts
+      /*border : 1px dashed black;*/
 }
 
-.grid-page{
+.grid-page {
     display: grid;
     grid-template-columns: repeat(1, 100vw);
     /*grid-gap: 10px;*/
-    margin :0 0;
+    margin: 0 0;
     height: 100vh;
 }
+
 /*
 .grid-ligne {
     display: grid;
@@ -41,7 +43,7 @@
 }
 
 header {
-    background-color: cadetblue;   /*#9eafa6 ;*/
+    background-color: cadetblue; /*#9eafa6 ;*/
     height: 13vh;
 }
 
@@ -49,6 +51,7 @@ main {
     background-color: bisque;
     height: 79vh;
 }
+
 footer {
     background-color: burlywood;
     height: 8vh;
@@ -59,13 +62,24 @@ footer {
 }
 
 .liste {
-    /*text-decoration: none;*/
-    color: black;
+    text-decoration: none;
+    color: cadetblue;
 }
 
 .liste:hover {
-    text-decoration: cadetblue;
-    color: cadetblue;
+    text-decoration: underline;
+    color: black;
+}
+
+.alert-success {
+    /* haut | droit | bas | gauche */
+    margin: 1rem;
+    padding: 2rem;
+    font-size: 2rem;
+    color: burlywood;
+    background-color: darkcyan;
+    border-radius: 0.5em;
+    text-align: center;
 }
 
 
