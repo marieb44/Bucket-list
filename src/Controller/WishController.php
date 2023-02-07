@@ -21,7 +21,10 @@ class WishController extends AbstractController
     {
         $date = new \DateTime();
         //$wishes = $wishRepository->findAll();
-        $wishes = $wishRepository->findBy([], ["dateCreated" => "DESC"], null, 0);
+        //$wishes = $wishRepository->findBy([], ["dateCreated" => "DESC"], null, 0);
+
+        //optimisation requête avec jointure suite à ajout relation avec table Category
+        $wishes = $wishRepository->findAllWithCategory();
         return $this->render('wish/list.html.twig', [
             'today' => $date,
             'wishes' => $wishes
@@ -35,7 +38,11 @@ class WishController extends AbstractController
     ): Response
     {
         $date = new \DateTime();
-        $wish = $wishRepository->findOneBy(["id" => $id]);
+        //$wish = $wishRepository->findOneBy(["id" => $id]);
+        //optimisation requête
+        $wish = $wishRepository->findOneWithCategory($id);
+
+        dump($wish);
         return $this->render('wish/detail.html.twig', [
             'today' => $date,
             'wish' => $wish

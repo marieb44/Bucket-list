@@ -14,7 +14,7 @@
             {% endfor %}
         {% endfor %}
     </div>
-    <h1 class="align-left">{{ wish.title }}</h1>
+    <h1 class="align-left">{{ wish.title }} [ {{ wish.category.name }} ]</h1>
     <p class="align-left">Créé le {{ wish.dateCreated | date("d/m/Y") }} par {{ wish.author }}</p>
     <p class="align-left">{{ wish.description }}</p>
 {% endblock %}

@@ -5,7 +5,8 @@
 
     <ul class="align-left">
         {% for wish in wishes %}
-            <li><h3><a class="liste" href="{{ path('wish_detail', {'id': wish.id}) }}">{{ wish.title }}</a>
+            <li><h3><a class="liste" href="{{ path('wish_detail', {'id': wish.id}) }}">
+                        {{ wish.title }} [ {{ wish.category.name }} ]</a>
                     {# ({{ wish.id }}) {{ wish.dateCreated | date("d/m/Y") }} #} </h3></li>
         {% endfor %}
     </ul>
