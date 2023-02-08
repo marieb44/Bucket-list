@@ -14,11 +14,13 @@ class WishType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('title', null, ['label' => "Your idea"])
-            ->add('description', null, ["label" => "Please describe it !"])
-            ->add('author', null, ["label" => "Your username"])
-            ->add('category',
-                EntityType::class,
+            ->add('title', null,
+                ['label' => "Your idea"]) //possibilité de mettre un placeholder via "attr" => ["placeholder" => "Renseignez votre souhait..."]
+            ->add('description', null,
+                ["label" => "Please describe it !"])
+            ->add('author', null,
+                ["label" => "Your username"])
+            ->add('category', EntityType::class,
                 [
                     "class" => Category::class,
                     "choice_label" => "name"

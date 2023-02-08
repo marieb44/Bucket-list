@@ -19,19 +19,26 @@
     height: 100vh;
 }
 
-/*
+.vertical-center {
+    /* haut | droit | bas | gauche */
+    /*padding: 3vh 0 0 10vh;*/
+    padding-top: 7vh;
+}
+
 .grid-ligne {
     display: grid;
-    grid-template-columns: repeat(12, 9vw);
+    /*grid-gap: 1rem;*/
+    grid-template-columns: repeat(2, 45vw);
 }
-*/
+
 .space-right {
     margin-right: 3vw;
 }
 
 .logo {
-    margin-top: 1vh;
+    margin-top: 2vh;
     max-width: 3vw;
+    min-width: 3vw;
 }
 
 .align-left {
