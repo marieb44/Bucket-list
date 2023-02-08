@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/wish', name: 'wish')]
 class WishController extends AbstractController
@@ -49,6 +50,7 @@ class WishController extends AbstractController
         ]);
     }
 
+    #[isGranted('ROLE_USER')]
     #[Route('/create', name: '_create')]
     public function add(
         EntityManagerInterface $em,
@@ -59,6 +61,7 @@ class WishController extends AbstractController
 
         //1.créer une instance de Wish
         $wish = new Wish();
+        $wish->setAuthor($this->getUser()->getUserIdentifier());
 
 //        $wish = (new Wish())
 //            ->setIsPublished(true)

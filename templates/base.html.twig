@@ -22,15 +22,26 @@
 <body class="grid-page">
 <header>
     {# {% block header %}{% endblock %} #}
-    <div class="align-left">
-        <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo d'un seau"/><span
-                class="text-grand">Bucket-List</span>
-    </div>
-    <div class="align-left grid-ligne">
-        <a class="space-right" href="{{ path('main_home') }}">Home</a>
-        <a class="space-right" href="{{ path('wish_list') }}">All wishes</a>
-        <a class="space-right" href="{{ path('wish_create') }}">Add yours !</a>
-        <a class="space-right" href="{{ path('main_about-us') }}">About us</a>
+    <div>
+        <div class="align-left">
+            <img class="logo" src="{{ asset('img/logo.svg') }}" alt="logo d'un seau"/>
+            <span class="text-grand">Bucket-List</span>
+            {% if app.user %}
+                <span>Welcome {{ app.user.username }} !</span>
+                <span><a href="{{ path('app_logout') }}">Logout</a></span>
+            {% else %}
+                <span><a href="{{ path('app_register') }}">Register</a></span>
+                <span><a href="{{ path('app_login') }}">Login</a></span>
+            {% endif %}
+        </div>
+        <div class="align-left grid-ligne">
+            <a class="space-right" href="{{ path('main_home') }}">Home</a>
+            <a class="space-right" href="{{ path('wish_list') }}">All wishes</a>
+            {% if app.user %}
+                <a class="space-right" href="{{ path('wish_create') }}">Add yours !</a>
+            {% endif %}
+            <a class="space-right" href="{{ path('main_about-us') }}">About us</a>
+        </div>
     </div>
 </header>
 <main>

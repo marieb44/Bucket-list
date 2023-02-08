@@ -38,6 +38,10 @@
     padding-left: 10vw;
 }
 
+.align-right {
+    text-align: right;
+}
+
 .text-grand {
     font-size: 3rem;
 }
@@ -59,6 +63,17 @@ footer {
 
 .center {
     text-align: center;
+}
+
+header a {
+    text-decoration: none;
+    color: black;
+
+}
+
+header a:hover {
+    text-decoration: underline;
+    color: bisque;
 }
 
 .liste {
